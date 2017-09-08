@@ -1,0 +1,49 @@
+<navigation></navigation>
+
+<div class="container"> 
+
+  <div class="row">
+    <div class="col-md-6" style="background-color: white;border-radius: 25px;border: 2px solid #73AD21; padding: 20px">
+      <a href="doctor">Back</a>
+      <h1>Add a new doctor</h1>
+		<form ng-submit="vm.onSubmit()">
+			<div class="form-group">
+          <label for="name">Doctor Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="vm.doctor.doctor_name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Doctor Email</label>
+          <input type="text" class="form-control" id="email" placeholder="Enter email " ng-model="vm.doctor.doctor_email">
+        </div>
+
+         <div class="form-group">
+          <label for="speciality">Doctor Speciality</label>
+          <input type="text" class="form-control" id="speciality" placeholder="Enter speciality" ng-model="vm.doctor.speciality">
+        </div>
+
+       <!-- <div class="form-group">
+          <label for="time_start">Doctor Start_Time</label>
+          <input type="time" class="form-control" id="time_start" placeholder="HH:mm:ss" ng-model="vm.doctor.time_start">
+        </div>
+
+
+        <div class="form-group">
+          <label for="time_end">Doctor End_Time</label>
+          <input type="time" class="form-control" id="time_end" placeholder="HH:mm:ss" ng-model="vm.doctor.time_end">
+        </div>-->
+
+        <button type="submit" class="btn btn-default">Add</button>
+
+		</form>
+	</div>
+</div>
+
+<style type="text/css">
+  body {
+    background:#edf1f4 url('img/add.jpg');
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans serif;
+    font-size:16px;
+    color:#444;
+  }
+</style>

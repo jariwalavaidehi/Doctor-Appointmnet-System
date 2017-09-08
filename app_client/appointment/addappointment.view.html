@@ -1,0 +1,27 @@
+<navigation></navigation>
+<div >
+	<div id='newAppointment'>
+	<h4><button ng-click='vm.logout()' >Logout</button>  
+		<h2>New Appointment</h2>
+	<h4><a href="profile">Go to your profile</a></h4>
+		<form ng-submit="onSub()">
+			Date: <input type='date' ng-model='newAppointment.date' class='form-control'><br>
+			Time: <input type='time' ng-model='newAppointment.time' class='form-control'><br>
+			<p style='vertical-align:top'>Complain: <textarea rows='8' ng-model='newAppointment.complain' class='form-control'></textarea></p>
+			 <button type="submit" class='btn btn-info pull-right'>ADD!</button>
+			<a href="#/" class='btn btn-warning pull-right'>Cancel</a>
+			<div ng-repeat='message in errorMessages'>
+				<p style='color:red;' ng-bind='message'></p>
+			</div>
+		</form>
+	</div>
+</div>
+
+<style type="text/css">
+  body {
+    background:#edf1f4 url('image/addapp.jpg');
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans serif;
+    font-size:16px;
+    color:#444;
+  }
+</style>

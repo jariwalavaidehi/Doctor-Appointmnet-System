@@ -1,0 +1,35 @@
+<navigation></navigation>
+
+<div class="container" style="background-color: white;border-radius: 25px;border: 2px solid #73AD21;padding: 20px; ">
+  <div class="row">
+    
+     <div class="col-md-6">
+      <h4><button ng-click='vm.logout()' >Logout</button> 
+      <h1 class="form-signin-heading">Your profile</h1>
+      
+      <form  class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Full name</label>
+          <p class="form-control-static">{{ vm.user.name }}</p>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Email</label>
+          <p class="form-control-static">{{ vm.user.email }}</p>
+        </div>
+              </form>
+
+    </div>
+
+  </div>
+</div>
+
+<style type="text/css">
+  body {
+    background:#edf1f4 ;
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans serif;
+    font-size:16px;
+    color:#444;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>

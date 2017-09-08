@@ -1,0 +1,55 @@
+<navigation></navigation>
+<div>
+
+<div class="row" style="background-color: white;border-radius: 25px;border: 2px solid #73AD21; padding: 20px; ">
+
+		<h4><button ng-click='vm.logout()' >Logout</button> 
+		<h2>Doctor's List</h2> 
+		<h4><a href="profile">Go to your profile</a></h4>
+
+		<p class='pull-right'>Search:  <input type='text' ng-model='filter_name' placeholder='search name...' /></p>
+		<p class='pull-right'>Name: <input ng-model="search.name"/></p>
+		<table  class='table table-striped'>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Speciality</th>
+				<!--<th>Start_Time</th>
+				<th>End_Time</th>-->
+			</tr>
+			<tr ng-repeat ='doctor in vm.doctors | startFrom:vm.currentPage*vm.pageSize | limitTo:vm.pageSize | filter:filter_name | filter:{doctor_name:search.name}'>
+					<td ng-bind='doctor.doctor_name'></td>
+					<td ng-bind='doctor.doctor_email'></td>
+					<td ng-bind='doctor.speciality'></td>
+					<!--<td ng-bind='doctor.time_start | date: "shortTime"'></td>
+					<td ng-bind='doctor.time_end | date: "shortTime"'></td>-->
+					<td><button ng-click="vm.delete(doctor)">Delete</button></td>
+					<td><button ng-click="vm.store(doctor)">Edit</button></td>
+			</tr>
+		</table>
+
+		<div class="Button" align="center">
+			<button ng-disabled="vm.currentPage == 0" ng-click="vm.currentPage=vm.currentPage-1">
+			Previous
+			</button>
+			{{vm.currentPage+1}}/{{vm.numberOfPages()}}
+			<button ng-disabled="vm.currentPage >= vm.doctors.length/vm.pageSize - 1" ng-click="vm.currentPage=vm.currentPage+1">
+			Next
+			</button>
+		</div>
+	
+		<button ng-click="redirectAddDoctor()" class="btn-info pull-right">Add Doctor</button>
+		
+		</div>
+</div>
+
+<style type="text/css">
+  body {
+    background:#edf1f4 url('img/list.jpg');
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans serif;
+    font-size:16px;
+    color:#444;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
